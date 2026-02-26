@@ -19,6 +19,6 @@ func (s *Server) RegisterRoutes(h handlers.Handler) *chi.Mux {
 		MaxAge:           300,
 	}))
 	r.Get("healthcheck", h.HeartBeat)
-	r.Get("/ws", r.HandleSocket)
+	r.Get("/ws", h.HandleSocket)
 	return r
 }
